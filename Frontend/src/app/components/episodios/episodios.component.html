@@ -1,0 +1,50 @@
+<div class="episodios-container">
+    <h1>Episodios de Rick and Morty</h1>
+
+    @defer (on viewport) {
+        @if (info()) {
+        <div class="pagination-info">
+            <p>Página {{ paginaActual() }} de {{ info()!.pages }}</p>
+        </div>
+        }
+        @if (info()) {
+        <div class="pagination-controls">
+            @if (info()!.prev) {
+            <button (click)="cargarEpisodios(paginaActual() - 1)">Anterior</button>
+            }
+            @if (info()!.next) {
+            <button (click)="cargarEpisodios(paginaActual() + 1)">Siguiente</button>
+            }
+        </div>
+
+        @if (episodios().length > 0) {
+        <div class="episodios-grid">
+            @for (episodio of episodios(); track episodio.id) {
+            <div class="episodio-card">
+                <h3>{{ episodio.name }}</h3>
+                <p><strong>Episodio:</strong> {{ episodio.episode }}</p>
+                <p><strong>Fecha de emisión:</strong> {{ episodio.air_date }}</p>
+                <p><strong>Personajes:</strong> {{ episodio.characters.length }}</p>
+                <button class="verDetalles" (click)="verDetalles(episodio.id)">Ver detalles</button>
+            </div>
+            }
+        </div>
+
+        }
+        } @else {
+        <p class="no-data">No hay episodios para mostrar</p>
+        }
+    } @placeholder {
+        <div class="loading-placeholder">
+            <p>Cargando episodios...</p>
+        </div>
+    } @loading (minimum 500ms) {
+        <div class="loading-spinner">
+            <p>⏳ Cargando...</p>
+        </div>
+    } @error {
+        <div class="error-message">
+            <p>❌ Error al cargar los episodios</p>
+        </div>
+    }
+</div>

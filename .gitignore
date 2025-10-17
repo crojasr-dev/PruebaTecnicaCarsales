@@ -1,0 +1,24 @@
+# Visual Studio
+.vs/
+*.vsidx
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+# Node modules (si usas Node en Frontend)
+node_modules/
+dist/
+.env
+
+# Otros
+*.log
+.DS_Store

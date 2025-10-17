@@ -1,0 +1,257 @@
+.episodios-container {
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+
+}
+
+.episodios-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+.episodios-container .no-data {
+    text-align: center;
+    color: #777;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.episodios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination-controls button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.episodio-card {
+    background-color: rgba(211, 211, 211, 0.415);
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.episodio-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.verDetalles {
+    margin-top: auto;
+    padding: 6px 12px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    background-color: #dddfe2;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 8px 0;
+}
+
+.pagination-info p {
+    margin: 4px 0;
+}
+
+.detalle-container {
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    background-color: rgba(211, 211, 211, 0.415);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detalle-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.episodio-detalle {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.episodio-detalle h2 {
+    color: #007bff;
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-grid p {
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(211, 211, 211, 0.3);
+    border-radius: 4px;
+    border-left: 3px solid #007bff;
+}
+
+.info-grid strong {
+    color: #333;
+    margin-right: 8px;
+}
+
+.btn-volver {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 20px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: #0056b3;
+}
+
+.detalle-container .loading {
+    text-align: center;
+    color: #777;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.personajes-section {
+    margin-top: 30px;
+}
+
+.personajes-section h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.personaje-card {
+    background-color: rgba(211, 211, 211, 0.3);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.personaje-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.personaje-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.personaje-card h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #007bff;
+}
+
+.personaje-card p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+.personajes-placeholder,
+.personajes-loading,
+.personajes-error {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 20px;
+    background-color: rgba(211, 211, 211, 0.2);
+    border-radius: 6px;
+}
+
+.personajes-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 123, 255, 0.1);
+    border-top-color: #007bff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.personajes-placeholder p,
+.personajes-loading p,
+.personajes-error p {
+    margin: 0;
+    color: #666;
+    font-size: 16px;
+}
+
+.personajes-error p {
+    color: #dc3545;
+}   

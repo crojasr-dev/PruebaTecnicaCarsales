@@ -1,0 +1,39 @@
+<div class="detalle-container">
+    <h1>Detalle del Episodio</h1>
+
+    @if (episodio()) {
+    <button class="btn-volver" routerLink="/episodios">← Volver a episodios</button>
+    
+    <div class="episodio-detalle">
+        <h2>{{ episodio()!.name }}</h2>
+        <div class="info-grid">
+            <p><strong>Episodio:</strong> {{ episodio()!.episode }}</p>
+            <p><strong>Fecha de emisión:</strong> {{ episodio()!.air_date }}</p>
+            <p><strong>Personajes:</strong> {{ episodio()!.characters.length }}</p>
+            <p><strong>Creado:</strong> {{ episodio()!.created | date:'dd/MM/yyyy' }}</p>
+        </div>
+
+        <div class="personajes-section">
+            <h3>Personajes</h3>
+            @if (personajes().length > 0) {
+            <div class="personajes-grid">
+                @for (personaje of personajes(); track personaje.id) {
+                <div class="personaje-card">
+                    <img [src]="personaje.image" [alt]="personaje.name">
+                    <h4>{{ personaje.name }}</h4>
+                    <p>{{ personaje.species }}</p>
+                </div>
+                }
+            </div>
+            } @else {
+            <div class="personajes-loading">
+                <div class="spinner"></div>
+                <p>⏳ Cargando personajes...</p>
+            </div>
+            }
+        </div>
+    </div>
+    } @else {
+    <p class="loading">Cargando detalles del episodio...</p>
+    }
+</div>
